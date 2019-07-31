@@ -479,7 +479,7 @@ void Settings::LoadDefaultsOrSave(std::string path)
 	settings[XORSTR("SkinChanger")][XORSTR("Models")][XORSTR("enabled")] = Settings::Skinchanger::Models::enabled;
 	settings[XORSTR("SkinChanger")][XORSTR("Skins")][XORSTR("perTeam")] = Settings::Skinchanger::Skins::perTeam;
 
-	for (const auto& item: Settings::Skinchanger::skinsCT)
+	/*for (const auto& item: Settings::Skinchanger::skinsCT)
 	{
 		const AttribItem_t& skin = item.second;
 
@@ -506,7 +506,7 @@ void Settings::LoadDefaultsOrSave(std::string path)
 		skinSetting[XORSTR("CustomName")] = skin.customName;
 		#undef skinSetting
 	}
-
+*/
 	settings[XORSTR("ShowRanks")][XORSTR("enabled")] = Settings::ShowRanks::enabled;
 
 	settings[XORSTR("ShowSpectators")][XORSTR("enabled")] = Settings::ShowSpectators::enabled;
@@ -993,7 +993,7 @@ void Settings::LoadConfig(std::string path)
 	Settings::Skinchanger::skinsCT.clear();
 	Settings::Skinchanger::skinsT.clear();
 
-	for (Json::ValueIterator itr = settings[XORSTR("SkinChanger")][XORSTR("skinsCT")].begin(); itr != settings[XORSTR("SkinChanger")][XORSTR("skinsCT")].end(); itr++)
+	/*for (Json::ValueIterator itr = settings[XORSTR("SkinChanger")][XORSTR("skinsCT")].begin(); itr != settings[XORSTR("SkinChanger")][XORSTR("skinsCT")].end(); itr++)
 	{
 		std::string skinDataKey = itr.key().asString();
 		auto skinSetting = settings[XORSTR("SkinChanger")][XORSTR("skinsCT")][skinDataKey];
@@ -1068,7 +1068,7 @@ void Settings::LoadConfig(std::string path)
 	}
 
 	SkinChanger::forceFullUpdate = true;
-
+*/
 	GetVal(settings[XORSTR("SkinChanger")][XORSTR("Skins")][XORSTR("enabled")], &Settings::Skinchanger::Skins::enabled);
 	GetVal(settings[XORSTR("SkinChanger")][XORSTR("Models")][XORSTR("enabled")], &Settings::Skinchanger::Models::enabled);
 	GetVal(settings[XORSTR("SkinChanger")][XORSTR("Skins")][XORSTR("perTeam")], &Settings::Skinchanger::Skins::perTeam);
